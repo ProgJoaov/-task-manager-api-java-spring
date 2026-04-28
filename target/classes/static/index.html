@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Notes Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="background-glow"></div>
+
+  <main class="app">
+    <header class="hero">
+      <span class="badge">Java + Spring Boot</span>
+      <h1>Dev Notes Manager</h1>
+      <p>Organize tarefas, ideias e prazos em um dashboard interativo.</p>
+    </header>
+
+    <section class="composer">
+      <input id="taskInput" placeholder="Escreva uma anotação ou tarefa..." />
+      <input id="dataInput" type="date" />
+      <input id="horaInput" type="time" />
+      <button onclick="addTask()">Criar</button>
+    </section>
+
+    <section class="filters">
+      <button id="filterAll" class="active" onclick="setFilter('all')">Todas</button>
+      <button id="filterPending" onclick="setFilter('pending')">Atrasadas</button>
+      <button id="filterDone" onclick="setFilter('done')">Concluídas</button>
+    </section>
+
+    <section class="stats">
+      <div>
+        <strong id="totalTasks">0</strong>
+        <span>Total</span>
+      </div>
+      <div>
+        <strong id="doneTasks">0</strong>
+        <span>Concluídas</span>
+      </div>
+      <div>
+        <strong id="pendingTasks">0</strong>
+        <span>Atrasadas</span>
+      </div>
+    </section>
+
+    <section id="taskList" class="notes-grid"></section>
+
+    <p id="emptyMessage" class="empty">Nenhuma anotação cadastrada ainda.</p>
+
+    <footer>
+      Projeto • Java • Spring Boot • REST API
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
